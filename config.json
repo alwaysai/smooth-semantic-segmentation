@@ -1,0 +1,9 @@
+{
+    "model_id" : "alwaysai/fcn_alexnet_pascal_voc",
+    "target_labels" : ["person"],
+    "background_images" : "images/",
+    "image" : "beach_pic.jpg",
+    "blur" : false,
+    "use_background_image" : true,
+    "blur_level" : 50
+}
