@@ -40,18 +40,6 @@ def load_json(filepath):
     with open(filepath) as data:
         return json.load(data)
 
-
-def overlay_image(foreground_image, background_image, foreground_mask):
-    background_mask = cv.cvtColor(
-            255 - cv.cvtColor(foreground_mask, cv.COLOR_BGR2GRAY),
-            cv.COLOR_GRAY2BGR)
-
-    masked_fg = (foreground_image * (1 / 255.0)) * (foreground_mask * (1 / 255.0))
-    masked_bg = (background_image * (1 / 255.0)) * (background_mask * (1 / 255.0))
-
-    return np.uint8(cv.addWeighted(masked_fg, 255.0, masked_bg, 255.0, 0.0))
-
-
 def main():
     # load the configuration data from config.json
     config = load_json(CONFIG_FILE)
@@ -127,13 +115,13 @@ def main():
                     shape = frame.shape[:2]
 
                     # resize the image
-                    background = cv.resize(img, (shape[1], shape[0]), interpolation=cv.INTER_NEAREST)
+                    background = edgeiq.resize(img, shape[1], shape[0], keep_scale=False)
 
                 if blur:
                     # blur the background
                     background = cv.blur(background, (blur_level, blur_level))
 
-                frame = overlay_image(frame, background, mask)
+                frame = edgeiq.overlay_image(frame, background, mask)
 
                 streamer.send_data(frame, text)
 
