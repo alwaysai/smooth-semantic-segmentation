@@ -3,7 +3,6 @@ import edgeiq
 import time
 import os
 import json
-import numpy as np
 
 """
 Use semantic segmentation to determine a class for each pixel of an image.
@@ -32,13 +31,15 @@ BLUR = "blur"
 USE_BACKGROUND_IMAGE = "use_background_image"
 BLUR_LEVEL = "blur_level"
 
+
 def load_json(filepath):
     # check that the file exsits and return the loaded json data
-    if os.path.exists(filepath) == False:
+    if os.path.exists(filepath) is False:
         raise Exception('File at {} does not exist'.format(filepath))
 
     with open(filepath) as data:
         return json.load(data)
+
 
 def main():
     # load the configuration data from config.json
@@ -79,14 +80,13 @@ def main():
                 text = ["Model: {}".format(semantic_segmentation.model_id)]
                 text.append("Inference time: {:1.3f} s".format(results.duration))
 
-
                 # build the color mask, making all colors the same except for background
-                semantic_segmentation.colors = [ (0,0,0) for i in semantic_segmentation.colors]
+                semantic_segmentation.colors = [(0, 0, 0) for i in semantic_segmentation.colors]
 
                 # iterate over all the desired items to identify, labeling those white
                 for label in labels_to_mask:
                     index = semantic_segmentation.labels.index(label)
-                    semantic_segmentation.colors[index] = (255,255,255)
+                    semantic_segmentation.colors[index] = (255, 255, 255)
 
                 # build the color mask
                 mask = semantic_segmentation.build_image_mask(results.class_map)
