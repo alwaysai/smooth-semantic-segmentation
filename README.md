@@ -1,5 +1,5 @@
 # Virtual Green Screen with Edge Smoothing Example App
-This app expands on an app that uses semantic segmentation to segment out a person from background noise in a video stream and replace the background with an image or blur it out. This app demonstrates how to subsequently smooth segmentation boundaries. This app also demonstrates how to separate your app configuration information into a separate JSON file. For more details on this aspect of the app, please see the original blog: https://medium.com/@jalakoo_83320/using-a-computer-vision-classifier-to-sort-images-333d5090c0b4
+This app expands on an app that uses semantic segmentation to segment out a person from background noise in a video stream and replace the background with an image or blur it out. This app demonstrates how to subsequently smooth segmentation boundaries. This app also demonstrates how to separate your app configuration information into a separate JSON file. For more details on this aspect of the app, please see the [original blog post](https://medium.com/@jalakoo_83320/using-a-computer-vision-classifier-to-sort-images-333d5090c0b4).
 
 ## Requirements
 
