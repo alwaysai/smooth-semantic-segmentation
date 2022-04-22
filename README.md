@@ -26,7 +26,8 @@ You should see an image such as the image below when using the 'beach.png' with 
 ## Troubleshooting
 Docs: https://dashboard.alwaysai.co/docs/getting_started/introduction.html
 
-Community Discord: https://discord.gg/rjDdRPT
+Community Discord: https://discord.gg/alwaysai
 
 Email: support@alwaysai.co
+
 
