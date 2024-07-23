@@ -14,7 +14,7 @@ This app also has an option of smoothing our the edges of the segmentation,
 which can be done by toggling 'smooth' to true in the config.json file.
 
 To change the computer vision model, follow this guide:
-https://dashboard.alwaysai.co/docs/application_development/changing_the_model.html
+https://docs.alwaysai.co/application_development/application_configuration.html#change-the-computer-vision-model
 
 To change the engine and accelerator, follow this guide:
 https://docs.alwaysai.co/application_development/application_configuration.html#change-the-engine-and-accelerator
